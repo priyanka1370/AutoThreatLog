@@ -1,4 +1,4 @@
-# 🔍 AutoThreatLog
+# 💻 AutoThreatLog
 
 **AutoThreatLog** is a lightweight Python-based log analysis tool that scans macOS and Linux system logs for suspicious activity using rule-based detection.  
 It automatically identifies potential threats such as failed logins, unauthorized access, and firewall events — producing both structured JSON reports and visual analytics.  
@@ -179,7 +179,7 @@ MIT License © 2025 Priyanka Ankammagari
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Priyanka Ankammagari**  
 B.S. Cybersecurity, Purdue University  
