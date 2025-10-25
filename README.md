@@ -90,8 +90,8 @@ RULES = {
 ```
 Just add new patterns and rerun the script — no configuration files required.
 
-📜 License
+License
 MIT License © 2025 Priyanka Ankammagari
 
-🙋‍♀️ Author
+Author
 Priyanka Ankammagari
