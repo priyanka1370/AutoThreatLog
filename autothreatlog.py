@@ -90,7 +90,7 @@ def main():
         patterns =  list(results.keys())
         counts = [info["count"] for info in results.values()]
 
-        plt.figure(figsize=(8,4))
+        plt.figure(figsize=(8,4)) #visualizations
         plt.barh(patterns, counts)
         plt.xlabel("Count")
         plt.title("AutoThreatLog Detections")
