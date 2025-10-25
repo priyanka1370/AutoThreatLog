@@ -1,6 +1,11 @@
 {
+  "detections": {
     "error": {
-        "count": 6,
-        "severity": "low"
+      "count": 6,
+      "severity": "low"
     }
+  },
+  "ip_hits": {},
+  "risk_score": 6,
+  "risk_level": "Low"
 }

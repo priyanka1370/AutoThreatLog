@@ -4,21 +4,13 @@ import sys
 from pathlib import Path
 import re
 import json
+import argparse
+from collections import defaultdict
+from collections import Counter
 
-def main():
-    if len(sys.argv) < 2: #accepting a path
-        print("Usage: python autothreatlog.py [path/to/log/file] *ensure you are in the correct directory")
-        sys.exit()
-    log_path = Path(sys.argv[1])
-    if not log_path.exists():
-        print("Error: file not found:", log_path)
-        sys.exit()
 
-    with log_path.open("r", encoding="utf-8", errors = "ignore") as f: #safely read lines
-        lines = f.readlines()
-    print("Success: read", len(lines), "from", log_path)
 
-    RULES = {
+RULES = {
     r"Failed password": "medium",
     r"Invalid user": "high",
     r"error": "low",
@@ -28,18 +20,68 @@ def main():
 }
  #rules/metrics
 
-    results = {} #structure for results
-    for line in lines:
-        for pattern, severity in RULES.items():
-            if re.search(pattern, line, flags=re.IGNORECASE):
-                if pattern not in results:
-                    results[pattern] = {"count":0, "severity": severity}
-                results[pattern]["count"] += 1
+SEVERITIES = {"low": 1, "medium": 2, "high": 3}
+
+def parse_args():
+    p = argparse.ArgumentParser(description="AutoThreatLog v2.0 – smarter log analysis")
+    p.add_argument("logfile", help="Path/to/log/file")
+    p.add_argument("--out", default="output/threat_report.json", help="Output JSON path")
+    return p.parse_args()
+
+def extract_ip(line):
+    m = re.search("r(\d{1,3}(?:\.\d{1,3}){3})", line)
+    return m.group(1) if m else None
+
+
+def main():
+    args = parse_args()
+    log_path = Path(args.logfile)
+    if not log_path.exists():
+        print("Error: file not found:", log_path)
+        sys.exit(1)
     
-    with open("output/threat_report.json", "w") as out:
-        json.dump(results, out, indent=4) #to export report
+    results = defaultdict(lambda: {"count": 0, "severity": None})
+    ip_hits = Counter()
 
+    with log_path.open("r", encoding="utf-8", errors = "ignore") as f: #safely read lines
+        for line in f:
+            for pattern, severity in RULES.items():
+                if re.search(pattern, line, flags=re.IGNORECASE):
+                    results[pattern]["count"] += 1
+                    results[pattern]["severity"] = severity
+                    ip = extract_ip(line)
+                    if ip:
+                        ip_hits[ip] += 1
+    
+    risk_score = sum(v["count"] * SEVERITIES[v["severity"]] for v in results.values())
+    risk_level = (
+        "Low" if risk_score < 10 else
+        "Moderate" if risk_score < 25 else
+        "High"    )
 
+    if results: #summary
+        print("——— Detections ———")
+        for pattern, info in results.items():
+            print(f"{pattern:35s} {info['count']:>3d} ({info['severity']})")
+        print ("——— Top Suspicious IP Addresses ———")
+        for ip, count in ip_hits.most_common(5):
+            print(f"\nOverall Risk Score: {risk_score} —> {risk_level}")
+        else:
+            ("no detections have been found")
+
+    out = {
+        "detections": results,
+        "ip_hits": dict(ip_hits),
+        "risk_score": risk_score,
+        "risk_level": risk_level
+    }
+
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", encoding="utf-8") as o:
+        json.dump(out, o, indent=2)
+    
+    print(f"SUCCESS: Report saved to {out_path.resolve()}")
 
 
 if __name__ == "__main__":
