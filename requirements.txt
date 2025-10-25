@@ -1,0 +1,5 @@
+# AutoThreatLog dependencies
+# This tool uses only Python standard libraries.
+# Tested with Python 3.10 and 3.11
+
+# No external dependencies required.
