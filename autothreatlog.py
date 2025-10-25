@@ -7,6 +7,7 @@ import json
 import argparse
 from collections import defaultdict
 from collections import Counter
+import matplotlib.pyplot as plt
 
 
 
@@ -23,9 +24,10 @@ RULES = {
 SEVERITIES = {"low": 1, "medium": 2, "high": 3}
 
 def parse_args():
-    p = argparse.ArgumentParser(description="AutoThreatLog v2.0 – smarter log analysis")
-    p.add_argument("logfile", help="Path/to/log/file")
+    p = argparse.ArgumentParser(description="AutoThreatLog v3.0 – visual and summary reporting")
+    p.add_argument("logfile", help="Path to log file")
     p.add_argument("--out", default="output/threat_report.json", help="Output JSON path")
+    p.add_argument("--chart", default="output/threat_chart.png", help="Path to chart image")  # ← add this line
     return p.parse_args()
 
 def extract_ip(line):
@@ -66,14 +68,46 @@ def main():
         print ("——— Top Suspicious IP Addresses ———")
         for ip, count in ip_hits.most_common(5):
             print(f"\nOverall Risk Score: {risk_score} —> {risk_level}")
-        else:
-            ("no detections have been found")
+    else:
+        ("no detections have been found")
+    
+    total_events = sum(info["count"] for info in results.values())
+    if total_events > 0:
+        top_pattern = max(results, key=lambda k: results[k]["count"])
+        summary = (
+            f"\nSummary:\n"
+            f"- {total_events} total detections across {len(results)} rule types.\n"
+            f"- Most frequent: '{top_pattern}' ({results[top_pattern]['count']} occurences).\n"
+            f"- {len(ip_hits)} unique suspicious IPs observed.\n"
+            f"- Overall risk level assesses as {risk_level}.\n"
+        )
+        print(summary)
+    else:
+        summary = "Summary: non suspcious activity found.\n"
+        print (summary)
+    
+    if results:
+        patterns =  list(results.keys())
+        counts = [info["count"] for info in results.values()]
+
+        plt.figure(figsize=(8,4))
+        plt.barh(patterns, counts)
+        plt.xlabel("Count")
+        plt.title("AutoThreatLog Detections")
+        plt.tight_layout()
+
+        chart_path = Path(args.chart)
+        chart_path.parent.mkdir(parents=True, exist_ok=True)
+        plt.savefig(chart_path)
+        plt.close()
+        print(f"Chart saved to {chart_path.resolve()}")
 
     out = {
         "detections": results,
         "ip_hits": dict(ip_hits),
         "risk_score": risk_score,
-        "risk_level": risk_level
+        "risk_level": risk_level,
+        "summary":summary.strip(),
     }
 
     out_path = Path(args.out)

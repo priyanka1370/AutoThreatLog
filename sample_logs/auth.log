@@ -1,100 +1,17 @@
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: MakeRequest Thread Id: 0x783CF000 File: HttpConnection.cpp Line: 330 Level: debug :: Url=http://enroll.cisco.com/auth/discovery?architecture=9
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: MakeRequest Thread Id: 0x783CF000 File: HttpConnection.cpp Line: 332 Level: debug :: Encoded Url=http://enroll.cisco.com/auth/discovery?architecture=9
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_curl_set_options Thread Id: 0x783CF000 File: hs_transport_curl.c Line: 614 Level: debug :: Setting TLS version option
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_init Thread Id: 0x783CF000 File: hs_transport.c Line: 310 Level: debug :: using libcurl
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_init Thread Id: 0x783CF000 File: hs_transport.c Line: 552 Level: debug :: initialization done
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: GetLoggedInUserID Thread Id: 0xDDF6E080 File: ImpersonateUser.cpp Line: 210 Level: debug :: Logged in user ID: 501
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: hs_file_verify_with_killdate Thread Id: 0xDDF6E080 File: hs_file_verify_mac.c Line: 810 Level: debug :: verifying file signature: file = [/bin/launchctl], signer = [Apple Code Signing Certification Authority], type = [1]
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: is_user_agent_running Thread Id: 0xDDF6E080 File: LaunchPosture.cpp Line: 47 Level: info :: The user agent for aciseposture  is already running : 749
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: logTransition Thread Id: 0xDDF6E080 File: SMNav.cpp Line: 167 Level: info :: New State = PM_INIT, New Event = EV_NO_EVENT  
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: logTransition Thread Id: 0xDDF6E080 File: SMNav.cpp Line: 167 Level: info :: Cur State = SW_UNKNOWN, Event = EV_INTERFACE_CHANGE  
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: logTransition Thread Id: 0xDDF6E080 File: SMNav.cpp Line: 167 Level: info :: New State = SW_UNKNOWN, New Event = EV_ENTER  
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: SMS_enterUnknown Thread Id: 0xDDF6E080 File: SMNavSwift.cpp Line: 243 Level: debug :: SETUP SM_RC_TMO_SEARCHING timer
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: timerPrc Thread Id: 0xDDF6E080 File: SwiftManager.cpp Line: 280 Level: debug :: MSG_SH_S_SETUP_TIMER, {sm:0,return_code:509,ev_str:"SM_RC_TMO_SEARCHING",interval:30}
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: SendUIHeadendFQDN Thread Id: 0xDDF6E080 File: SwiftManager.cpp Line: 231 Level: debug :: MSG_SU_STEP_STATUS, {Status:12,Compliant:0,RemStatus:63,Phase:0,StepNumber:0,Progress:0,Attention:0,Cancellable:0,Restartable:0,ErrorMessage:0,Description1:"",Description2:""}
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: SMS_enterUnknown Thread Id: 0xDDF6E080 File: SMNavSwift.cpp Line: 262 Level: debug :: MSG_SU_FULL_POSTURE_LIST, {TimeLimit:0,NagOption:0,DomainTag:"",Items:[]}
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: SMS_enterUnknown Thread Id: 0xDDF6E080 File: SMNavSwift.cpp Line: 263 Level: debug :: MSG_SU_RMD_LIST, {TimeLimit:0,NagOption:0,DomainTag:"",Items:[]}
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: sendUIOpswatSDKVersion Thread Id: 0xDDF6E080 File: SwiftManager.cpp Line: 217 Level: debug :: MSG_SU_STEP_STATUS, {Status:13,Compliant:3,RemStatus:0,Phase:0,StepNumber:-1,Progress:-1,Attention:0,Cancellable:0,Restartable:0,ErrorMessage:0,Description1:"Not Found",Description2:""}
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: sendUIStatus Thread Id: 0xDDF6E080 File: SwiftManager.cpp Line: 186 Level: debug :: MSG_SU_STEP_STATUS, {Status:3,Compliant:3,RemStatus:8143728,Phase:0,StepNumber:-1,Progress:-1,Attention:0,Cancellable:0,Restartable:0,ErrorMessage:0,Description1:"Searching for policy server.",Description2:"This could take up to 30 seconds."}
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: logTransition Thread Id: 0xDDF6E080 File: SMNav.cpp Line: 167 Level: info :: New State = SW_UNKNOWN, New Event = EV_NO_EVENT  
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: loadXMLCfgFile Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 51 Level: warn :: Both ISEPostureCFG.xml and ISEPostureBootstrap.xml not present. Using defaults
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: GetConfigData Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 225 Level: warn :: The cfg parameter for numeric value StealthMode was invalid. Using default. (XML was )
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: loadXMLCfgFile Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 51 Level: warn :: Both ISEPostureCFG.xml and ISEPostureBootstrap.xml not present. Using defaults
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: GetConfigData Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 225 Level: warn :: The cfg parameter for numeric value StealthMode was invalid. Using default. (XML was )
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: loadXMLCfgFile Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 51 Level: warn :: Both ISEPostureCFG.xml and ISEPostureBootstrap.xml not present. Using defaults
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: GetConfigData Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 225 Level: warn :: The cfg parameter for numeric value StealthMode was invalid. Using default. (XML was )
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: loadXMLCfgFile Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 51 Level: warn :: Both ISEPostureCFG.xml and ISEPostureBootstrap.xml not present. Using defaults
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: GetConfigData Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 225 Level: warn :: The cfg parameter for numeric value StealthMode was invalid. Using default. (XML was )
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: loadXMLCfgFile Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 51 Level: warn :: Both ISEPostureCFG.xml and ISEPostureBootstrap.xml not present. Using defaults
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: GetConfigData Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 225 Level: warn :: The cfg parameter for numeric value StealthMode was invalid. Using default. (XML was )
-Oct 25 00:06:50 Priyankas-MacBook csc_iseagentd[414]: Function: handleChangeCallback Thread Id: 0xDDF6E080 File: NwStateMonitor.cpp Line: 189 Level: debug :: VPN connection state unchanged: disconnected
-Oct 25 00:06:51 Priyankas-MacBook csc_nvmagent[412]: Function: notifyNetworkStateChange Thread Id: 0x6F8A7000 File: /tmp/build/thehoff/Quicksilver_MR50.868685019339/Quicksilver_MR5/ACRuntime/library/NetworkMonitor.cpp Line: 393 :: Network change detected. (1)
-Oct 25 00:06:51 Priyankas-MacBook csc_nvmagent[412]: Function: OnNetworkStateChange Thread Id: 0x6F8A7000 File: /tmp/build/thehoff/Quicksilver_MR50.868685019339/Quicksilver_MR5/NVM/Common/NVMTND.cpp Line: 611 :: Network State change notified - Network Reachable.
-Oct 25 00:06:52 Priyankas-MacBook csc_iseagentd[414]: Function: handleChangeCallback Thread Id: 0xDDF6E080 File: NwStateMonitor.cpp Line: 189 Level: debug :: VPN connection state unchanged: disconnected
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_curl_get Thread Id: 0x783CF000 File: hs_transport_curl.c Line: 2104 Level: warn :: libcurl error: 28 Error
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: probeDiscoveryUrl Thread Id: 0x783CF000 File: Target.cpp Line: 269 Level: debug :: GET request to URL (http://enroll.cisco.com/auth/discovery?architecture=9), returned status -1 <Operation Failed.>
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: Probe Thread Id: 0x783CF000 File: Target.cpp Line: 212 Level: debug :: Status of Redirection target enroll.cisco.com is 6 <Not Reachable.>
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: loadXMLCfgFile Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 51 Level: warn :: Both ISEPostureCFG.xml and ISEPostureBootstrap.xml not present. Using defaults
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: addPreviouslyConnectedHeadendsToTargetList Thread Id: 0xDDF6E080 File: SwiftHttpRunner.cpp Line: 980 Level: warn :: No previously connected headends found
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: collectMntTargets Thread Id: 0xDDF6E080 File: SwiftHttpRunner.cpp Line: 1483 Level: debug :: Probing MNT stage targets (#1): Ng-Discovery target enroll.cisco.com with path /auth/ng-discovery, 
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: MakeRequest Thread Id: 0x7845B000 File: HttpConnection.cpp Line: 330 Level: debug :: Url=https://enroll.cisco.com:8905/auth/ng-discovery
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: probeNextMntTarget Thread Id: 0xDDF6E080 File: SwiftHttpRunner.cpp Line: 1757 Level: debug :: Probing Mnt stage Ng-Discovery target enroll.cisco.com with path /auth/ng-discovery
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: MakeRequest Thread Id: 0x7845B000 File: HttpConnection.cpp Line: 332 Level: debug :: Encoded Url=https://enroll.cisco.com:8905/auth/ng-discovery
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: GetPSNStatusType Thread Id: 0xDDF6E080 File: DefaultGatewayRecordManager.cpp Line: 96 Level: info :: No PSN found previously for gateway , still send 1 round of probes
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_curl_set_options Thread Id: 0x7845B000 File: hs_transport_curl.c Line: 614 Level: debug :: Setting TLS version option
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_init Thread Id: 0x7845B000 File: hs_transport.c Line: 310 Level: debug :: using libcurl
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: http_discovery_callback Thread Id: 0xDDF6E080 File: SwiftHttpRunner.cpp Line: 569 Level: info :: By looking at cache records we know that there won't be any PSN found for the gateway  and discovery host is also not changed, so not sending any more probes.
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_init Thread Id: 0x7845B000 File: hs_transport.c Line: 552 Level: debug :: initialization done
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: http_discovery_callback Thread Id: 0xDDF6E080 File: SwiftHttpRunner.cpp Line: 574 Level: debug :: MSG_NS_SWISS_SEARCHING, 
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: logTransition Thread Id: 0xDDF6E080 File: SMNav.cpp Line: 167 Level: info :: Cur State = SW_UNKNOWN, Event = EV_NW_STATUS_CHANGE  
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: sendUIStatus Thread Id: 0xDDF6E080 File: SwiftManager.cpp Line: 186 Level: debug :: MSG_SU_STEP_STATUS, {Status:6,Compliant:3,RemStatus:-614353536,Phase:0,StepNumber:-1,Progress:-1,Attention:0,Cancellable:0,Restartable:0,ErrorMessage:1,Description1:"No policy server detected.",Description2:"Default network access is in effect."}
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: timerPrc Thread Id: 0xDDF6E080 File: SwiftManager.cpp Line: 280 Level: debug :: MSG_SH_S_DEL_TIMER, {sm:0,return_code:509,ev_str:"delete searching timer",interval:0}
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: logTransition Thread Id: 0xDDF6E080 File: SMNav.cpp Line: 167 Level: info :: New State = SW_UNKNOWN, New Event = EV_NO_EVENT  
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: loadXMLCfgFile Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 51 Level: warn :: Both ISEPostureCFG.xml and ISEPostureBootstrap.xml not present. Using defaults
-Oct 25 00:06:53 Priyankas-MacBook csc_iseagentd[414]: Function: GetConfigData Thread Id: 0xDDF6E080 File: ConfigData.cpp Line: 225 Level: warn :: The cfg parameter for numeric value StealthMode was invalid. Using default. (XML was )
-Oct 25 00:06:58 Priyankas-MacBook csc_iseagentd[414]: Function: hs_transport_curl_post Thread Id: 0x7845B000 File: hs_transport_curl.c Line: 2270 Level: warn :: libcurl error: 28 Error
-Oct 25 00:06:58 Priyankas-MacBook csc_iseagentd[414]: Function: fetchPostureStatus Thread Id: 0x7845B000 File: Target.cpp Line: 472 Level: debug :: POST request to URL (https://enroll.cisco.com:8905/auth/ng-discovery), returned status -1 <Operation Failed.>, stage 2
-Oct 25 00:06:58 Priyankas-MacBook csc_iseagentd[414]: Function: Probe Thread Id: 0x7845B000 File: Target.cpp Line: 212 Level: debug :: Status of Ng-Discovery target enroll.cisco.com with path /auth/ng-discovery is 6 <Not Reachable.>
-Oct 25 00:08:29 Priyankas-MacBook login[6587]: USER_PROCESS: 6587 ttys000
-Oct 25 00:12:04 Priyankas-MacBook login[6587]: DEAD_PROCESS: 6587 ttys000
-Oct 25 00:20:03 Priyankas-MacBook syslogd[119]: ASL Sender Statistics
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.cdscheduler" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.install" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.authd" sharing output destination "/var/log/asl" with ASL Module "com.apple.asl".
-	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.authd" sharing output destination "/var/log/system.log" with ASL Module "com.apple.asl".
-	Output parameters from ASL Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.authd" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.eventmonitor" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.mail" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.performance" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.iokit.power" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.contacts.ContactsAutocomplete" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.mkb" sharing output destination "/private/var/log/keybagd.log" with ASL Module "com.apple.mkb.internal".
-	Output parameters from ASL Module "com.apple.mkb.internal" override any specified in ASL Module "com.apple.mkb".
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.mkb" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:30:05 Priyankas-MacBook syslogd[119]: Configuration Notice:
-	ASL Module "com.apple.MessageTracer" claims selected messages.
-	Those messages may not appear in standard system log files or in the ASL database.
-Oct 25 00:35:03 Priyankas-MacBook syslogd[119]: ASL Sender Statistics
+Oct 25 09:21:01 MacBook sshd[1022]: Failed password for invalid user root 
+from 192.168.1.10 port 51122 ssh2
+Oct 25 09:21:02 MacBook sshd[1022]: Failed password for invalid user admin 
+from 192.168.1.10 port 51123 ssh2
+Oct 25 09:21:03 MacBook sshd[1022]: Failed password for invalid user guest 
+from 192.168.1.10 port 51124 ssh2
+Oct 25 09:21:04 MacBook sshd[1022]: Accepted password for validuser from 
+10.0.0.5 port 51125 ssh2
+Oct 25 09:22:10 MacBook loginwindow[100]: Invalid user attempt detected 
+from 172.16.0.7
+Oct 25 09:22:12 MacBook firewalld[211]: Firewall rule denied connection from 192.168.1.15 to port 443
+Oct 25 09:22:15 MacBook kernel[0]: Unauthorized access attempt blocked from 192.168.1.10
+Oct 25 09:22:17 MacBook kernel[0]: Error reading from disk /dev/disk2
+Oct 25 09:22:19 MacBook systemd[1]: denied: attempt to start service xyz without permission
+Oct 25 09:22:20 MacBook systemd[1]: Unauthorized privilege escalation attempt by process 5432
+Oct 25 09:22:25 MacBook firewalld[211]: Firewall blocked connection from 10.0.0.5
+

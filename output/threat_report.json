@@ -1,11 +1,32 @@
 {
   "detections": {
+    "Failed password": {
+      "count": 3,
+      "severity": "medium"
+    },
+    "Invalid user": {
+      "count": 4,
+      "severity": "high"
+    },
+    "denied": {
+      "count": 2,
+      "severity": "high"
+    },
+    "firewall": {
+      "count": 2,
+      "severity": "medium"
+    },
+    "unauthorized": {
+      "count": 2,
+      "severity": "high"
+    },
     "error": {
-      "count": 6,
+      "count": 1,
       "severity": "low"
     }
   },
   "ip_hits": {},
-  "risk_score": 6,
-  "risk_level": "Low"
+  "risk_score": 35,
+  "risk_level": "High",
+  "summary": "Summary:\n- 14 total detections across 6 rule types.\n- Most frequent: 'Invalid user' (4 occurences).\n- 0 unique suspicious IPs observed.\n- Overall risk level assesses as High."
 }
